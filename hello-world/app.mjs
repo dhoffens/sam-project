@@ -1,3 +1,5 @@
+import os from 'os';
+
 /**
  *
  * Event doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html#api-gateway-simple-proxy-for-lambda-input-format
@@ -15,7 +17,7 @@ export const lambdaHandler = async (event, context) => {
     const response = {
       statusCode: 200,
       body: JSON.stringify({
-        message: 'hello world',
+        message: 'hello from ' + os.hostname(),
       })
     };
 
