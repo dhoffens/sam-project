@@ -1,3 +1,4 @@
+
 import os from 'os';
 
 /**
@@ -17,7 +18,7 @@ export const lambdaHandler = async (event, context) => {
     const response = {
       statusCode: 200,
       body: JSON.stringify({
-        message: 'hello from ' + os.hostname(),
+        message: 'hello ' + event.name + ' from ' + os.hostname(),
       })
     };
 
